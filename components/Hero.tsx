@@ -19,7 +19,7 @@ export default function Hero() {
       />
       <LaneLines variant="light" />
 
-      <Container className="relative py-[4.5rem] md:py-24">
+      <Container className="relative pb-[4.5rem] pt-28 md:pb-24 md:pt-32">
         <Eyebrow>Defensive Riding &amp; Defensive Driving</Eyebrow>
         <h1 className="mt-5 max-w-[16ch] text-[clamp(2.9rem,7.4vw,6rem)] font-bold leading-[1.02] tracking-[-0.01em] text-ink">
           One road to <span className="text-signal">safety.</span> Two ways to

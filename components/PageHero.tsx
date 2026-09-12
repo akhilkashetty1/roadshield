@@ -49,7 +49,7 @@ export default function PageHero({
         }}
       />
       <LaneLines variant="light" />
-      <Container className="relative py-16 md:py-20">
+      <Container className="relative pb-16 pt-28 md:pb-20 md:pt-32">
         <span
           className={cn(
             "inline-flex items-center gap-2 font-mono text-[0.72rem] font-semibold uppercase tracking-[0.24em]",

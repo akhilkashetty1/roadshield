@@ -37,7 +37,7 @@ export default function Header() {
     pathname === href || (href !== "/" && pathname.startsWith(href));
 
   return (
-    <header className="sticky top-0 z-50">
+    <header className="fixed inset-x-0 top-0 z-50">
       {/* Gutter — collapses to 0 on scroll so the pill un-floats flush to the edges */}
       <div
         className={cn(
@@ -49,11 +49,11 @@ export default function Header() {
         {/* The capsule — floating pill at rest, rearranges into a normal bar on scroll */}
         <div
           className={cn(
-            "mx-auto flex items-center gap-2 border backdrop-blur-xl transition-all duration-500 sm:gap-3",
+            "mx-auto flex items-center gap-2 border backdrop-blur-xl backdrop-saturate-150 transition-all duration-500 sm:gap-3",
             EASE,
             scrolled
-              ? "max-w-full rounded-none border-x-0 border-t-0 border-b border-line bg-white/92 px-4 py-2.5 shadow-[0_14px_34px_-18px_rgba(20,24,40,0.35)] sm:px-6"
-              : "max-w-[1140px] rounded-full border-line/70 bg-white/55 px-2.5 py-2 shadow-[0_6px_24px_-16px_rgba(20,24,40,0.3)] sm:px-3",
+              ? "max-w-full rounded-none border-x-0 border-t-0 border-b border-line/80 bg-white/65 px-4 py-2.5 shadow-[0_14px_34px_-20px_rgba(20,24,40,0.3)] sm:px-6"
+              : "max-w-[1140px] rounded-full border-white/60 bg-white/35 px-2.5 py-2 shadow-[0_8px_28px_-18px_rgba(20,24,40,0.28)] sm:px-3",
           )}
         >
           <Link
@@ -116,7 +116,7 @@ export default function Header() {
             aria-label="Toggle menu"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="ml-auto grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-ink transition-colors hover:border-signal lg:hidden"
+            className="ml-auto grid h-10 w-10 place-items-center rounded-full border border-white/70 bg-white/60 text-ink backdrop-blur transition-colors hover:border-signal lg:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -129,7 +129,7 @@ export default function Header() {
             open ? "mt-2 max-h-[75vh] opacity-100" : "max-h-0 opacity-0",
           )}
         >
-          <div className="rounded-2xl border border-line bg-white/95 p-3 shadow-[0_24px_54px_-20px_rgba(20,24,40,0.42)] backdrop-blur-xl">
+          <div className="rounded-2xl border border-white/60 bg-white/85 p-3 shadow-[0_24px_54px_-20px_rgba(20,24,40,0.42)] backdrop-blur-xl backdrop-saturate-150">
             <div className="flex flex-col gap-1">
               {NAV.map((item) => (
                 <Link

@@ -35,7 +35,7 @@ export default function AboutPage() {
           }}
         />
         <LaneLines variant="light" />
-        <Container className="relative py-16 md:py-20">
+        <Container className="relative pb-16 pt-28 md:pb-20 md:pt-32">
           <Eyebrow tone="navy">About RoadShield</Eyebrow>
           <h1 className="mt-4 max-w-[20ch] text-[clamp(2.1rem,4.8vw,3.4rem)] font-bold leading-[1.05] text-ink">
             Meet the people behind RoadShield
