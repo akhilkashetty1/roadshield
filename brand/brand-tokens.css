@@ -1,0 +1,63 @@
+/* RoadShield — brand tokens (derived from the three logos)
+   Drop-in starter for the build phase. Light + dark, theme-aware. */
+
+:root{
+  /* Core palette */
+  --rs-red:#DA1F26;        /* Signal Red — primary / alert / Ride Smart lean */
+  --rs-red-deep:#B3141A;
+  --rs-navy:#1B2A4A;       /* Deep Navy — the "R" / trust / Drive Smart lean */
+  --rs-navy-soft:#33456B;
+  --rs-asphalt:#1B1C20;    /* dark ground & text */
+  --rs-concrete:#EEF0F4;   /* light ground (navy-biased neutral) */
+  --rs-amber:#F2B705;      /* road-marking accent ONLY */
+  --rs-pink:#E5397F;       /* women-safety "Pink Vehicle Check" ONLY */
+
+  /* Semantic (light theme) */
+  --bg:var(--rs-concrete);
+  --surface:#FFFFFF;
+  --surface-2:#F7F8FB;
+  --text:var(--rs-asphalt);
+  --text-soft:#454A54;
+  --muted:#6B7280;
+  --line:#DBDEE6;
+  --accent:var(--rs-red);
+
+  /* Type */
+  --font-display:"Oswald",Impact,system-ui,sans-serif;      /* headlines */
+  --font-body:"IBM Plex Sans",system-ui,-apple-system,sans-serif; /* body */
+  --font-mono:"IBM Plex Mono",ui-monospace,monospace;       /* data / labels */
+  --font-stencil:"Saira Stencil One",var(--font-display);   /* tagline motif only */
+
+  /* Scale (8-pt) */
+  --space-1:8px; --space-2:16px; --space-3:24px; --space-4:32px;
+  --space-5:48px; --space-6:64px; --space-7:96px;
+  --radius:14px; --radius-sm:9px;
+  --wrap:1140px;
+}
+
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#101116;
+    --surface:#191B21;
+    --surface-2:#20232B;
+    --text:#ECEDF1;
+    --text-soft:#BCC1CC;
+    --muted:#868C99;
+    --line:#2A2D36;
+    --rs-red:#F1434A;      /* brightened for dark contrast */
+    --rs-navy:#8FA6D8;     /* lightened to work as an accent on dark */
+    --accent:var(--rs-red);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101116;
+  --surface:#191B21;
+  --surface-2:#20232B;
+  --text:#ECEDF1;
+  --text-soft:#BCC1CC;
+  --muted:#868C99;
+  --line:#2A2D36;
+  --rs-red:#F1434A;
+  --rs-navy:#8FA6D8;
+  --accent:var(--rs-red);
+}

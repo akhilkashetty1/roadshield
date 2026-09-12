@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Brand palette (derived from the RoadShield logos) ---- */
+  --color-signal: #da1f26;        /* Signal Red */
+  --color-signal-deep: #b3141a;
+  --color-navy: #1b2a4a;          /* Deep Navy (the "R") */
+  --color-navy-soft: #33456b;
+  --color-asphalt: #16171b;       /* dark cinematic ground */
+  --color-asphalt-2: #1b1d23;
+  --color-ink: #1b1c20;           /* body text on light */
+  --color-ink-soft: #454a54;
+  --color-muted: #6b7280;
+  --color-concrete: #eef0f4;      /* light ground */
+  --color-concrete-2: #f7f8fb;
+  --color-line: #dbdee6;
+  --color-line-strong: #c4c9d4;
+  --color-amber: #f2b705;         /* road-marking accent only */
+  --color-amber-deep: #8a5f06;    /* amber, darkened for legible text on white */
+  --color-pinkcheck: #e5397f;     /* women-safety line only */
+
+  /* On dark bands */
+  --color-night-ink: #f1f2f5;
+  --color-night-ink-soft: #aeb4c0;
+  --color-night-line: #2c2f38;
+  --color-night-navy: #8fa6d8;
+  --color-night-red: #f1434a;
+
+  /* ---- Type ---- */
+  --font-sans: var(--font-plex), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-oswald), Impact, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --font-stencil: var(--font-stencil), var(--font-oswald), sans-serif;
+
+  /* ---- Shadows ---- */
+  --shadow-card: 0 1px 2px rgba(20, 24, 40, 0.05), 0 12px 34px -18px rgba(20, 24, 40, 0.28);
+  --shadow-lift: 0 30px 70px -34px rgba(20, 24, 40, 0.45);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--color-concrete);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: 0.005em;
+    text-wrap: balance;
+  }
+  ::selection {
+    background: var(--color-signal);
+    color: #fff;
+  }
+}
+
+/* ---- Motion primitives ---- */
+@keyframes laneScroll {
+  to { background-position: 0 240px; }
+}
+@keyframes cueDrop {
+  0%, 100% { opacity: 0; transform: translate(-50%, 0); }
+  40% { opacity: 1; }
+  70% { opacity: 0; transform: translate(-50%, 8px); }
+}
+@keyframes spinWheel {
+  to { transform: rotate(360deg); }
+}
+
+.lane-anim { animation: laneScroll 3s linear infinite; }
+.cue-dot { animation: cueDrop 1.6s ease infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .lane-anim, .cue-dot { animation: none !important; }
+}
+
+/* Utility: hide scrollbar for the mobile menu, keep scroll */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
