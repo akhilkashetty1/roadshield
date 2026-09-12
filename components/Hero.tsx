@@ -20,7 +20,7 @@ export default function Hero() {
       <LaneLines variant="light" />
 
       <Container className="relative py-[4.5rem] md:py-24">
-        <Eyebrow>Road-Safety Campaign</Eyebrow>
+        <Eyebrow>Defensive Riding &amp; Defensive Driving</Eyebrow>
         <h1 className="mt-5 max-w-[16ch] text-[clamp(2.9rem,7.4vw,6rem)] font-bold leading-[1.02] tracking-[-0.01em] text-ink">
           One road to <span className="text-signal">safety.</span> Two ways to
           get there.
@@ -28,10 +28,10 @@ export default function Hero() {
         <p className="mt-6 font-stencil text-[clamp(1.1rem,2.4vw,1.7rem)] tracking-[0.08em] text-ink">
           Anticipate. Adapt. Arrive.
         </p>
-        <p className="mt-6 max-w-[56ch] text-[1.12rem] leading-relaxed text-ink-soft">
-          RoadShield turns fleets, riders and drivers into confident, prepared
-          road users — through training, assessments, data and on-ground
-          accident support.
+        <p className="mt-6 max-w-[58ch] text-[1.12rem] leading-relaxed text-ink-soft">
+          RoadShield helps organizations move beyond basic road-safety
+          compliance and build a world-class safety culture — through defensive
+          riding, defensive driving and lasting behavioural change.
         </p>
         <p className="mt-4 font-mono text-[0.74rem] uppercase tracking-[0.16em] text-muted">
           A Division of CVS Motors

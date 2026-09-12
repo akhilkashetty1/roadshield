@@ -11,8 +11,12 @@ import {
   FileText,
   Video,
   Repeat,
-  ShieldCheck,
-  TrendingUp,
+  Bike,
+  Car,
+  Users,
+  Sparkles,
+  Cpu,
+  Award,
   type LucideIcon,
 } from "lucide-react";
 
@@ -32,7 +36,7 @@ export type Service = { title: string; desc: string; icon: LucideIcon };
 export const RIDE_SERVICES: Service[] = [
   {
     title: "Defensive Riding Training",
-    desc: "Classroom sessions plus practical, on-ground demos that build real hazard-reading reflexes.",
+    desc: "Developing hazard awareness, anticipation, risk perception and safer decision-making — classroom plus practical, on-ground demos.",
     icon: GraduationCap,
   },
   {
@@ -65,7 +69,7 @@ export const RIDE_SERVICES: Service[] = [
 export const DRIVE_SERVICES: Service[] = [
   {
     title: "Defensive Driving Training",
-    desc: "Classroom + practical demos, with structured driver assessment for four-wheeler fleets.",
+    desc: "Strengthening awareness, anticipation, space management and responsible driving behaviour — classroom, practical demos and driver assessment.",
     icon: GraduationCap,
   },
   {
@@ -209,35 +213,92 @@ export type Founder = {
   expertise?: string[];
 };
 
+/* ---------------------------------------------------------------
+   Official positioning — verbatim from the RoadShield intro document.
+   Edit here and it updates everywhere on the site.
+---------------------------------------------------------------- */
+
+export const WHO_WE_ARE = [
+  "RoadShield, a division of CVS Motors, is dedicated to advancing road safety for two-wheeler and four-wheeler users.",
+  "Our core area of focus is Defensive Riding and Defensive Driving, with an emphasis on developing safer mindsets, responsible road behaviour, and practical decision-making skills.",
+  "We work with organizations to move beyond basic road-safety compliance and build a world-class road-safety culture — one where every journey is safer, every rider and driver is empowered to make the right choice, and safety becomes a deeply embedded personal and organizational value.",
+];
+
 export const VISION = {
-  lead: "Zero Harm",
-  rest: " on Every Journey — Building a Culture of Safe Mobility.",
-  support: "More than a campaign — a lasting culture of safe mobility, on every road.",
+  leadIn: "To create a world where road safety is",
+  emphasis: "not just a rule to follow, but a value to live by.",
+  support:
+    "We envision safer roads powered by aware, skilled, responsible, and empowered riders and drivers, supported by organizations that place safety at the heart of their culture.",
 };
 
-export type MissionPillar = { title: string; desc: string; icon: LucideIcon };
+export const MISSION_STATEMENT =
+  "To help organizations reduce road risk and inspire lasting behavioural change by delivering innovative, engaging, and technology-enabled road-safety solutions focused on defensive riding, defensive driving, and safety leadership.";
 
-export const MISSION: MissionPillar[] = [
+export const STAND_FOR = {
+  lead: "RoadShield challenges conventional thinking about road safety.",
+  body: "We believe meaningful safety transformation happens when people understand the risk, recognize their responsibility, develop the right skills, and choose safer behaviour consistently.",
+  close:
+    "Through innovation, creative engagement, technology, and strong leadership, we help organizations continuously raise their road-safety benchmark.",
+};
+
+export type FocusArea = { title: string; desc: string; icon: LucideIcon };
+
+export const CORE_FOCUS: FocusArea[] = [
   {
-    title: "Raise Awareness",
-    desc: "Make road safety impossible to ignore — through campaigns, creatives and training.",
-    icon: Megaphone,
+    title: "Defensive Riding",
+    desc: "Developing hazard awareness, anticipation, risk perception, and safer decision-making among two-wheeler riders.",
+    icon: Bike,
   },
   {
-    title: "Change Behaviour",
-    desc: "Turn awareness into everyday habits, behind the wheel and on two wheels.",
+    title: "Defensive Driving",
+    desc: "Strengthening awareness, anticipation, space management, and responsible driving behaviour among four-wheeler drivers.",
+    icon: Car,
+  },
+  {
+    title: "Behavioural Change",
+    desc: "Transforming road-safety knowledge into consistent, measurable behaviour.",
     icon: Repeat,
   },
   {
-    title: "Reduce Risk",
-    desc: "Cut real-world exposure with assessments, gear and data-driven follow-up.",
-    icon: ShieldCheck,
+    title: "Safety Culture",
+    desc: "Embedding road safety into organizational values, systems, leadership, and everyday practices.",
+    icon: Users,
   },
   {
-    title: "Raise the Bar",
-    desc: "Set a higher standard of road safety for every fleet and community we touch.",
-    icon: TrendingUp,
+    title: "Creative Engagement",
+    desc: "Making safety communication relevant, memorable, and action-oriented.",
+    icon: Sparkles,
   },
+  {
+    title: "Technology & Innovation",
+    desc: "Leveraging modern tools and technology to improve learning, engagement, monitoring, and road-safety outcomes.",
+    icon: Cpu,
+  },
+  {
+    title: "Safety Leadership",
+    desc: "Enabling leaders and managers to become role models and champions of road safety.",
+    icon: Award,
+  },
+];
+
+export const APPROACH_STEPS = [
+  "Educate",
+  "Engage",
+  "Empower",
+  "Influence",
+  "Measure",
+  "Improve",
+];
+
+export const APPROACH_NOTE = {
+  lead: "We don't believe that a one-time training session creates a safety culture.",
+  body: "RoadShield takes a continuous approach that combines knowledge, practical skills, behavioural interventions, leadership involvement, technology, and measurement to create sustainable change.",
+};
+
+export const CLOSING_LINES = [
+  { subject: "Every rider", predicate: "has a choice." },
+  { subject: "Every driver", predicate: "has a responsibility." },
+  { subject: "Every organization", predicate: "has an opportunity to make a difference." },
 ];
 
 export const FOUNDERS: Founder[] = [

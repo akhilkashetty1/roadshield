@@ -2,10 +2,13 @@ import { ArrowRight } from "lucide-react";
 import Hero from "@/components/Hero";
 import AAASection from "@/components/AAASection";
 import LaneCards from "@/components/LaneCards";
+import ApproachFlow from "@/components/ApproachFlow";
 import ProgramCards from "@/components/ProgramCards";
 import PinkSpotlight from "@/components/PinkSpotlight";
 import StatsBand from "@/components/StatsBand";
+import ClosingBand from "@/components/ClosingBand";
 import CTASection from "@/components/CTASection";
+import { APPROACH_NOTE } from "@/lib/site-data";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
@@ -31,6 +34,17 @@ export default function Home() {
 
       <section className="border-y border-line bg-concrete-2 py-20 md:py-24">
         <Container>
+          <SectionHeading eyebrow="Our Approach" title="Educate. Engage. Empower.">
+            {APPROACH_NOTE.lead} {APPROACH_NOTE.body}
+          </SectionHeading>
+          <div className="mt-11">
+            <ApproachFlow />
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-line bg-white py-20 md:py-24">
+        <Container>
           <SectionHeading
             eyebrow="Shared Programs"
             tone="navy"
@@ -52,6 +66,7 @@ export default function Home() {
 
       <PinkSpotlight />
       <StatsBand />
+      <ClosingBand />
       <CTASection />
     </>
   );

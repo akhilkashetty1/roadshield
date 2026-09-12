@@ -6,7 +6,14 @@ import Eyebrow from "@/components/ui/Eyebrow";
 import Reveal from "@/components/ui/Reveal";
 import LaneLines from "@/components/ui/LaneLines";
 import CTASection from "@/components/CTASection";
-import { FOUNDERS, VISION, MISSION } from "@/lib/site-data";
+import {
+  FOUNDERS,
+  WHO_WE_ARE,
+  VISION,
+  MISSION_STATEMENT,
+  STAND_FOR,
+  CORE_FOCUS,
+} from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "About & Founders",
@@ -124,60 +131,99 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      {/* Who We Are */}
+      <section className="border-y border-line bg-concrete-2 py-20 md:py-24">
+        <Container>
+          <Reveal className="max-w-[68ch]">
+            <Eyebrow tone="navy">Who We Are</Eyebrow>
+            <h2 className="mt-4 text-[clamp(1.7rem,3.2vw,2.4rem)]">
+              Beyond compliance, towards culture
+            </h2>
+            <div className="mt-5 space-y-4 text-[1.05rem] leading-relaxed text-ink-soft">
+              {WHO_WE_ARE.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
       {/* Vision & Mission */}
-      <section id="vision" className="border-y border-line bg-concrete-2 py-20 md:py-24">
+      <section id="vision" className="py-20 md:py-24">
         <Container>
           <Reveal className="max-w-4xl">
             <Eyebrow>Our Vision</Eyebrow>
-            <p className="mt-5 text-balance font-display text-[clamp(2rem,5vw,3.6rem)] font-semibold leading-[1.06]">
-              <span className="text-signal">{VISION.lead}</span>
-              {VISION.rest}
+            <p className="mt-5 text-balance font-display text-[clamp(1.9rem,4.4vw,3.2rem)] font-semibold leading-[1.08]">
+              {VISION.leadIn}{" "}
+              <span className="text-signal">{VISION.emphasis}</span>
             </p>
-            <p className="mt-5 max-w-[52ch] text-lg leading-relaxed text-ink-soft">
+            <p className="mt-5 max-w-[60ch] text-lg leading-relaxed text-ink-soft">
               {VISION.support}
             </p>
           </Reveal>
 
-          <div className="mt-16">
-            <Reveal>
+          <Reveal className="mt-14">
+            <div className="rounded-3xl border border-line bg-white p-8 shadow-card md:p-10">
               <Eyebrow tone="navy">Our Mission</Eyebrow>
-              <h2 className="mt-4 text-[clamp(1.7rem,3.2vw,2.4rem)]">
-                Raise the bar on road safety
-              </h2>
-            </Reveal>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {MISSION.map((m, i) => {
-                const Icon = m.icon;
-                return (
-                  <Reveal key={m.title} delay={i * 0.06}>
-                    <article className="h-full rounded-2xl border border-line bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
-                      <span className="grid h-11 w-11 place-items-center rounded-xl bg-concrete text-signal">
-                        <Icon className="h-6 w-6" strokeWidth={1.8} />
-                      </span>
-                      <h3 className="mt-4 text-xl">{m.title}</h3>
-                      <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                        {m.desc}
-                      </p>
-                    </article>
-                  </Reveal>
-                );
-              })}
+              <p className="mt-4 max-w-[68ch] text-[1.15rem] leading-relaxed text-ink">
+                {MISSION_STATEMENT}
+              </p>
             </div>
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* What We Stand For */}
+      <section className="border-y border-line bg-concrete-2 py-20 md:py-24">
+        <Container>
+          <Reveal className="max-w-[68ch]">
+            <Eyebrow>What We Stand For</Eyebrow>
+            <h2 className="mt-4 text-[clamp(1.7rem,3.2vw,2.4rem)]">
+              {STAND_FOR.lead}
+            </h2>
+            <p className="mt-5 text-[1.05rem] leading-relaxed text-ink-soft">
+              {STAND_FOR.body}
+            </p>
+            <p className="mt-4 text-[1.05rem] leading-relaxed text-ink-soft">
+              {STAND_FOR.close}
+            </p>
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* Core Focus */}
+      <section className="py-20 md:py-24">
+        <Container>
+          <SectionHeading eyebrow="Our Core Focus" title="Seven areas we work in">
+            Defensive riding and defensive driving sit at the centre — supported
+            by the behaviour, culture, technology and leadership work that makes
+            them stick.
+          </SectionHeading>
+          <div className="mt-11 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {CORE_FOCUS.map((f, i) => {
+              const Icon = f.icon;
+              return (
+                <Reveal key={f.title} delay={i * 0.05}>
+                  <article className="h-full rounded-2xl border border-line bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+                    <span className="grid h-12 w-12 place-items-center rounded-xl bg-concrete text-signal">
+                      <Icon className="h-6 w-6" strokeWidth={1.8} />
+                    </span>
+                    <h3 className="mt-4 text-xl">{f.title}</h3>
+                    <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-soft">
+                      {f.desc}
+                    </p>
+                  </article>
+                </Reveal>
+              );
+            })}
           </div>
         </Container>
       </section>
 
-      {/* Our story + CVS Motors */}
-      <section className="py-20 md:py-24">
+      {/* CVS Motors */}
+      <section className="border-t border-line py-20 md:py-24">
         <Container>
-          <SectionHeading eyebrow="Our Story" title="Anticipate. Adapt. Arrive.">
-            Those three words are more than a tagline — they&rsquo;re how we work.
-            We help riders and drivers anticipate danger, adapt with data and
-            training, and arrive safely, every time. When something does go
-            wrong, we&rsquo;re there on the ground, from first-aid to root-cause.
-          </SectionHeading>
-
-          <Reveal className="mt-14">
+          <Reveal>
             <div className="grid items-center gap-8 rounded-3xl border border-line bg-concrete-2 p-8 md:grid-cols-[1fr_auto] md:p-10">
               <div>
                 <span className="font-mono text-[0.7rem] uppercase tracking-[0.16em] text-muted">
